@@ -33,111 +33,124 @@ body {
     font-weight: bold;
   }
 
-/* Default (Light Theme) */
+/* Light Theme */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --primary-color: #7e17d7;
-    --secondary-color: #f4f4f4;
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --primary-color: #7e17d7;
+  --project-hover: rgba(126, 23, 215, 0.5);
+}
+
+/* Dark Theme */
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --primary-color: #230a70;
+  --project-hover: rgba(155, 89, 182, 0.5);
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Theme and Menu Toggle */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto; /* Pushes to the right corner */
+}
+
+#theme-toggle, .menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+  nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background: var(--primary-color);
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      transform: translateX(0);
   }
   
-  /* Dark Theme */
-  [data-theme="dark"] {
-    --bg-color: #1e1e1e;
-    --text-color: #ffffff;
-    --primary-color: #1306d4;
-    --secondary-color: #2c2c2c;
-  }
-  
-  /* Apply Theme Variables */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  header {
-    background-color: var(--primary-color);
+  nav ul.show {
+      display: flex;
   }
 
-/* Blinking Header Title */
-@keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
+  .menu-toggle {
+      display: block; /* Show only on small screens */
   }
-  
-  nav h1 {
-    animation: blink 1.5s infinite; /* Blinking effect */
-  }
+}
 
-footer p {
-    margin: 5px 0;
-  }
-  
-  footer i {
-    margin-right: 8px;
-    font-size: 25px;
-  }
-  
-  footer a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-icons {
-    gap: 20px; /* Add space between icons */
-    margin-top: 10px; /* Space from the text above */
-  }
-  
-  
-  .footer-icons a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color */
-    font-size: 20px; /* Icon size */
-    transition: color 0.3s ease;
-  }
-  
-  
-  
-  /* Phone Icon Hover */
-  .footer-icons i#phone:hover {
-    color: #00ff3c; /* Green for phone */
-  }
-  
-  /* Facebook Icon Hover */
-  .footer-icons i#facebook:hover {
-    color: #006eff; /* Facebook blue */
-  }
-  
-  .footer-icons i#instagram:hover {
-    color: #e90f92; 
-  }
-  
-  .footer-icons i#x:hover {
-    color: #0a3474; 
-  }
-  
-  .footer-icons i#discord:hover {
-    color: #004ec2; 
-  }
-  
-  .footer-icons i#yt:hover {
-    color: #ff0000; 
-  }
-  
-  .footer-icons i#wa:hover {
-    color: #15ff00; 
-  }
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+}
 
+.footer-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+}
 
   /* General styling for the About page */
 .about-intro {
