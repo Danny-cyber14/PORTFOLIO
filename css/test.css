@@ -1,0 +1,139 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.contact-box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.email-section {
+    margin-bottom: 30px;
+}
+
+.email-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.email-link {
+    font-size: 1.4rem;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+.social-media-section {
+    margin-top: 40px;
+}
+
+.social-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+    filter: var(--icon-filter);
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Light Mode Styles */
+:root {
+    --bg-color: #f4f7fb;
+    --card-bg: #fff;
+    --heading-color: #333;
+    --text-color: #555;
+    --link-color: #0073e6;
+    --icon-filter: grayscale(100%);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.social-icon img:hover {
+    filter: none;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --card-bg: #1e1e1e;
+        --heading-color: #f4f4f4;
+        --text-color: #ddd;
+        --link-color: #ff6600;
+        --icon-filter: grayscale(100%) brightness(0.5);
+    }
+
+    body {
+        background-color: var(--bg-color);
+    }
+
+    .email-link {
+        color: var(--link-color);
+    }
+
+    .social-icon img {
+        filter: var(--icon-filter);
+    }
+
+    .social-icon img:hover {
+        filter: none;
+    }
+}

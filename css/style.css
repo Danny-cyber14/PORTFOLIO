@@ -1,0 +1,276 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #7e17d7;
+    padding: 10px 0;
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .hero {
+    display: flex; /* Use flexbox layout */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center the content */
+    gap: 30px; /* Add space between text and image */
+    margin: 20px; 
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+ /* Glowing effect for the View My Projects button */
+.cta {
+    color: var(--text-color); /* Ensure the text color is correct */
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: box-shadow 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for glow effect */
+  }
+  
+  /* Glowing effect on hover */
+  .cta:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.4); /* Glowing border */
+    color: #ffffff; /* Optional: Make the text color white on hover */
+  }
+  
+  
+  .featured-projects {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .projects {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .project {
+    background: #949393;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    width: 200px;
+  }
+/* Default (Light Theme) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #7e17d7;
+    --secondary-color: #f4f4f4;
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --primary-color: #1306d4;
+    --secondary-color: #2c2c2c;
+  }
+  
+  /* Apply Theme Variables */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  header {
+    background-color: var(--primary-color);
+  }
+  
+  .hero {
+    background-color: var(--secondary-color);
+  }
+  
+  .cta {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .featured-projects {
+    background-color: var(--secondary-color);
+  }
+    
+  /* Blinking Header Title */
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  nav h1 {
+    animation: blink 1.5s infinite; /* Blinking effect */
+  }
+  
+  /* Fade-in Hero Name */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero h2 {
+    animation: fadeIn 2s ease-out forwards;
+    opacity: 0; /* Start hidden */
+  }
+  
+  /* Fade-in Description */
+  .hero p {
+    animation: fadeIn 2.5s ease-out forwards;
+    opacity: 0; /* Start hidden */
+  }
+
+
+  /* Remove link default styles */
+.featured-projects a {
+    color: inherit; /* Inherit the text color from the parent */
+    text-decoration: none; /* Remove the underline */
+    transition: text-shadow 0.3s ease; /* Smooth transition for glow effect */
+  }
+  
+  /* Glowing effect on hover */
+  .featured-projects a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5);
+    color: #ffffff; /* Optional: Make the text color white on hover */
+  }
+  
+  
+
+
+
+/* Style for the text part of the introduction */
+.introduction-text {
+  flex: 1; /* Let the text section take available space */
+  color: var(--primary-text-color); /* Text color */
+}
+
+/* Style for the image in the introduction */
+.hero-image {
+  width: 40%; /* Set the image size */
+  max-width: 400px; /* Optional: Limit max width */
+  height: auto; /* Ensure the image maintains its aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Optional: Add responsiveness */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack text and image on top of each other */
+    align-items: center; /* Center content when stacking */
+  }
+  .hero-image {
+    border-radius: 4%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 255, 255, 0.4); /* Glowing border */
+    color: #ffffff; /* Optional: Make the text color white on hover */
+  }
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer i {
+  margin-right: 8px;
+  font-size: 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  gap: 20px; /* Add space between icons */
+  margin-top: 10px; /* Space from the text above */
+}
+
+
+.footer-icons a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  font-size: 20px; /* Icon size */
+  transition: color 0.3s ease;
+}
+
+
+
+/* Phone Icon Hover */
+.footer-icons i#phone:hover {
+  color: #00ff3c; /* Green for phone */
+}
+
+/* Facebook Icon Hover */
+.footer-icons i#facebook:hover {
+  color: #006eff; /* Facebook blue */
+}
+
+.footer-icons i#instagram:hover {
+  color: #e90f92; 
+}
+
+.footer-icons i#x:hover {
+  color: #0a3474; 
+}
+
+.footer-icons i#discord:hover {
+  color: #004ec2; 
+}
+
+.footer-icons i#yt:hover {
+  color: #ff0000; 
+}
+
+.footer-icons i#wa:hover {
+  color: #15ff00; 
+}

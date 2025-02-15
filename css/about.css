@@ -1,0 +1,289 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #7e17d7;
+    padding: 10px 0;
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+/* Default (Light Theme) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #7e17d7;
+    --secondary-color: #f4f4f4;
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --primary-color: #1306d4;
+    --secondary-color: #2c2c2c;
+  }
+  
+  /* Apply Theme Variables */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  header {
+    background-color: var(--primary-color);
+  }
+
+/* Blinking Header Title */
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  nav h1 {
+    animation: blink 1.5s infinite; /* Blinking effect */
+  }
+
+footer p {
+    margin: 5px 0;
+  }
+  
+  footer i {
+    margin-right: 8px;
+    font-size: 25px;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-icons {
+    gap: 20px; /* Add space between icons */
+    margin-top: 10px; /* Space from the text above */
+  }
+  
+  
+  .footer-icons a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    font-size: 20px; /* Icon size */
+    transition: color 0.3s ease;
+  }
+  
+  
+  
+  /* Phone Icon Hover */
+  .footer-icons i#phone:hover {
+    color: #00ff3c; /* Green for phone */
+  }
+  
+  /* Facebook Icon Hover */
+  .footer-icons i#facebook:hover {
+    color: #006eff; /* Facebook blue */
+  }
+  
+  .footer-icons i#instagram:hover {
+    color: #e90f92; 
+  }
+  
+  .footer-icons i#x:hover {
+    color: #0a3474; 
+  }
+  
+  .footer-icons i#discord:hover {
+    color: #004ec2; 
+  }
+  
+  .footer-icons i#yt:hover {
+    color: #ff0000; 
+  }
+  
+  .footer-icons i#wa:hover {
+    color: #15ff00; 
+  }
+
+
+  /* General styling for the About page */
+.about-intro {
+    text-align: center;
+    margin: 40px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-intro h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  /* Styling for the sections with horizontal layout */
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: inherit;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.169);
+  }
+  
+  /* Style for each section on the left side */
+  .about-left, .about-right {
+    width: 48%;
+  }
+  
+  /* Section titles styling */
+  h2 {
+    font-size: 1.8rem;
+    color: var(--primary-text-color);
+    margin-bottom: 15px;
+  }
+  
+  /* Skills list */
+/* Styling for the Skills list */
+.about-left ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .about-left li {
+    font-size: 1.2rem;
+    color: var(--primary-text-color);
+    margin: 10px 0;
+    padding-left: 25px; /* Add padding to create space between bullet and text */
+    position: relative;
+  }
+  
+  .about-left li::before {
+    content: "•"; /* Adds a bullet point before each skill */
+    color: var(--accent-color); /* Optional: Customize bullet color */
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  
+  /* Links styling */
+  .about-right a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .about-right a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+  }
+  
+  /* Optional: Responsive Design */
+  @media screen and (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-left, .about-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Styling for the Tributes section */
+.tributes-section {
+    padding: 30px;
+    background-color: inherit;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+  
+  .tributes-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .tributes-section p {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling each tribute */
+  .tribute {
+    background-color: inherit;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tribute h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .tribute p {
+    font-size: 1rem;
+    color: var(--primary-text-color);
+  }
+  
+  /* Optional: Hover effect for tribute blocks */
+  .tribute:hover {
+    background-color: none;
+  }
+  
+  .tribute:hover h3 {
+    color: inherit;
+  }
+  
+  
